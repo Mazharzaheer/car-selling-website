@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APEX MOTORS — Ultra Luxury Automotive</title>
+    <link rel="stylesheet" href="car.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ═══════════════════════════ LOADING SCREEN ═══════════════════════════ -->
+    <div id="loader">
+      <div class="loader-inner">
+        <div class="loader-logo">
+          <span class="loader-a">A</span>
+          <span class="loader-apex">PEX</span>
+        </div>
+        <div class="loader-bar-wrap">
+          <div class="loader-bar"></div>
+        </div>
+        <div class="loader-text">INITIALIZING EXPERIENCE</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════ CURSOR ═══════════════════════════ -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+    <nav id="navbar">
+      <div class="nav-logo">
+        <span class="logo-a">A</span><span class="logo-rest">PEX</span>
+        <span class="logo-sub">MOTORS</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+        <li><a href="#" class="nav-link" data-page="cars">Cars</a></li>
+        <li><a href="#" class="nav-link" data-page="brands">Brands</a></li>
+        <li><a href="#" class="nav-link" data-page="gallery">Gallery</a></li>
+        <li><a href="#" class="nav-link" data-page="about">About</a></li>
+        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-ghost" data-page="login">Login</button>
+        <button class="btn-red" data-page="register">Register</button>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════ PAGE: HOME ═══════════════════════════ -->
+    <div class="page active" id="page-home">
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hero-bg-grid"></div>
+        <div class="hero-scanline"></div>
+
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text">2025 COLLECTION</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h1 class="hero-title">
+            <span class="ht-line" data-delay="0">BEYOND</span>
+            <span class="ht-line accent-red" data-delay="100">VELOCITY</span>
+            <span class="ht-line" data-delay="200">BEYOND LIMITS</span>
+          </h1>
+          <p class="hero-subtitle">
+            Experience the pinnacle of automotive engineering. Where raw power
+            meets breathtaking design.
+          </p>
+          <div class="hero-ctas">
+            <button class="cta-primary" data-page="cars">
+              <span>Explore Collection</span>
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button class="cta-secondary" data-page="about">
+              <span class="play-icon">▶</span>
+              <span>Watch Film</span>
+            </button>
+          </div>
+          <div class="hero-stats">
+            <div class="h-stat">
+              <span class="h-stat-num" data-target="247">0</span
+              ><span class="h-stat-unit">MPH</span
+              ><span class="h-stat-label">Top Speed</span>
+            </div>
+            <div class="h-stat-divider"></div>
+            <div class="h-stat">
+              <span class="h-stat-num" data-target="1500">0</span
+              ><span class="h-stat-unit">HP</span
+              ><span class="h-stat-label">Max Power</span>
+            </div>
+            <div class="h-stat-divider"></div>
+            <div class="h-stat">
+              <span class="h-stat-num" data-target="1.8">0</span
+              ><span class="h-stat-unit">SEC</span
+              ><span class="h-stat-label">0–60 mph</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-car-stage">
+          <div class="car-spotlight"></div>
+          <div class="hero-car-wrap" id="heroCar">
+            <img
+              src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&q=90"
+              alt="Ferrari SF90"
+              class="hero-car-img"
+            />
+            <div class="car-reflection"></div>
+            <div class="car-glow"></div>
+          </div>
+          <div class="car-orbit">
+            <div class="orbit-ring r1"></div>
+            <div class="orbit-ring r2"></div>
+            <div class="orbit-dot"></div>
+          </div>
+        </div>
+
+        <div class="hero-scroll-hint">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span>Scroll to Explore</span>
+        </div>
+      </section>
+
+      <!-- FEATURED MODELS -->
+      <section class="section featured-section" id="featured">
+        <div class="section-header">
+          <div class="section-tag">FEATURED MODELS</div>
+          <h2 class="section-title">
+            CHOOSE YOUR <span class="accent-red">LEGEND</span>
+          </h2>
+          <p class="section-sub">
+            Hand-selected machines that redefine the boundaries of performance
+          </p>
+        </div>
+        <div class="featured-grid" id="featuredGrid"></div>
+        <div class="section-footer">
+          <button class="btn-outline" data-page="cars">
+            View All Models <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- LATEST LAUNCHES -->
+      <section class="section launches-section">
+        <div class="launches-inner">
+          <div class="launches-left">
+            <div class="section-tag">JUST DROPPED</div>
+            <h2 class="section-title">
+              LATEST<br /><span class="accent-blue">LAUNCHES</span>
+            </h2>
+            <p class="section-sub">
+              Be the first to witness history. New models arriving that shatter
+              every record known to man.
+            </p>
+            <button class="btn-red" data-page="cars">See All Launches</button>
+          </div>
+          <div class="launches-right" id="launchesRight"></div>
+        </div>
+      </section>
+
+      <!-- BRANDS -->
+      <section class="section brands-section" id="brands-section">
+        <div class="section-header">
+          <div class="section-tag">PREMIUM BRANDS</div>
+          <h2 class="section-title">
+            ICONS OF <span class="accent-red">SPEED</span>
+          </h2>
+        </div>
+        <div class="brands-marquee-wrap">
+          <div class="brands-marquee" id="brandsMarquee"></div>
+        </div>
+        <div class="brands-grid" id="brandsGrid"></div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section testi-section">
+        <div class="section-header">
+          <div class="section-tag">CLIENT VOICES</div>
+          <h2 class="section-title">
+            WHAT THEY <span class="accent-red">SAY</span>
+          </h2>
+        </div>
+        <div class="testi-track" id="testiTrack"></div>
+        <div class="testi-dots" id="testiDots"></div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="logo-a">A</span><span class="logo-rest">PEX</span>
+              <span class="logo-sub">MOTORS</span>
+            </div>
+            <p>
+              The world's most exclusive automotive marketplace. Where legends
+              are born and speed is religion.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-btn" title="Instagram">IG</a>
+              <a href="#" class="social-btn" title="Twitter">TW</a>
+              <a href="#" class="social-btn" title="YouTube">YT</a>
+              <a href="#" class="social-btn" title="Facebook">FB</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>SHOWROOM</h4>
+            <a href="#">Sports Cars</a><a href="#">Supercars</a
+            ><a href="#">Hypercars</a><a href="#">Electric</a
+            ><a href="#">Classics</a>
+          </div>
+          <div class="footer-col">
+            <h4>COMPANY</h4>
+            <a href="#">About Us</a><a href="#">Press</a><a href="#">Careers</a
+            ><a href="#">Events</a><a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>LEGAL</h4>
+            <a href="#">Privacy Policy</a><a href="#">Terms of Service</a
+            ><a href="#">Cookie Policy</a><a href="#">Disclaimer</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2025 APEX MOTORS. ALL RIGHTS RESERVED.</span>
+          <span>CRAFTED WITH OBSESSION</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ═══════════════════════════ PAGE: CARS ═══════════════════════════ -->
+    <div class="page" id="page-cars">
+      <div class="page-hero-mini">
+        <div
+          class="phm-bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=80&quot;);
+          "
+        ></div>
+        <div class="phm-overlay"></div>
+        <div class="phm-content">
+          <div class="section-tag">OUR SHOWROOM</div>
+          <h1>THE COLLECTION</h1>
+        </div>
+      </div>
+
+      <section class="section cars-section">
+        <!-- Filters -->
+        <div class="filters-bar">
+          <div class="filter-group">
+            <label>Brand</label>
+            <select id="filterBrand" class="filter-select">
+              <option value="all">All Brands</option>
+              <option>Ferrari</option>
+              <option>Lamborghini</option>
+              <option>Bugatti</option>
+              <option>Porsche</option>
+              <option>McLaren</option>
+              <option>Aston Martin</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Category</label>
+            <select id="filterCat" class="filter-select">
+              <option value="all">All Categories</option>
+              <option>Supercar</option>
+              <option>Hypercar</option>
+              <option>GT</option>
+              <option>Electric</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Max Price</label>
+            <select id="filterPrice" class="filter-select">
+              <option value="all">Any Price</option>
+              <option value="500000">Under $500K</option>
+              <option value="1000000">Under $1M</option>
+              <option value="3000000">Under $3M</option>
+              <option value="99000000">$3M+</option>
+            </select>
+          </div>
+          <div class="filter-results" id="filterResults">
+            Showing all vehicles
+          </div>
+        </div>
+        <div class="cars-grid" id="carsGrid"></div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════ PAGE: CAR DETAILS ═══════════════════════════ -->
+    <div class="page" id="page-detail">
+      <div class="detail-wrap" id="detailWrap"></div>
+    </div>
+
+    <!-- ═══════════════════════════ PAGE: BRANDS ═══════════════════════════ -->
+    <div class="page" id="page-brands">
+      <div class="page-hero-mini">
+        <div
+          class="phm-bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1493238792000-8113da705763?w=1400&q=80&quot;);
+          "
+        ></div>
+        <div class="phm-overlay"></div>
+        <div class="phm-content">
+          <div class="section-tag">HERITAGE & LEGACY</div>
+          <h1>THE BRANDS</h1>
+        </div>
+      </div>
+      <section class="section">
+        <div class="brands-full-grid" id="brandsFull"></div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════ PAGE: GALLERY ═══════════════════════════ -->
+    <div class="page" id="page-gallery">
+      <div class="page-hero-mini">
+        <div
+          class="phm-bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?w=1400&q=80&quot;);
+          "
+        ></div>
+        <div class="phm-overlay"></div>
+        <div class="phm-content">
+          <div class="section-tag">VISUAL LUXURY</div>
+          <h1>GALLERY</h1>
+        </div>
+      </div>
+      <section class="section">
+        <div class="gallery-masonry" id="galleryGrid"></div>
+      </section>
+      <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lbClose">✕</button>
+        <button class="lb-prev" id="lbPrev">‹</button>
+        <button class="lb-next" id="lbNext">›</button>
+        <img src="" id="lbImg" alt="Gallery Image" />
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════ PAGE: ABOUT ═══════════════════════════ -->
+    <div class="page" id="page-about">
+      <div class="page-hero-mini">
+        <div
+          class="phm-bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=1400&q=80&quot;);
+          "
+        ></div>
+        <div class="phm-overlay"></div>
+        <div class="phm-content">
+          <div class="section-tag">WHO WE ARE</div>
+          <h1>OUR STORY</h1>
+        </div>
+      </div>
+      <section class="section about-section">
+        <div class="about-grid">
+          <div class="about-text">
+            <div class="section-tag">EST. 1998</div>
+            <h2 class="section-title">
+              OBSESSED WITH <span class="accent-red">PERFECTION</span>
+            </h2>
+            <p>
+              APEX MOTORS was founded on a single, unwavering belief — that the
+              automobile is the greatest expression of human ingenuity. We
+              curate the world's most extraordinary vehicles for the world's
+              most extraordinary people.
+            </p>
+            <p>
+              From the volcanic streets of Maranello to the wind tunnels of
+              Woking, every car in our collection has been hand-selected by our
+              team of automotive obsessives. We don't sell cars. We deliver
+              dreams.
+            </p>
+            <div class="about-stats-row">
+              <div class="about-stat">
+                <span class="about-stat-n" data-target="27">0</span
+                ><span>Years</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-n" data-target="2400">0</span
+                ><span>Cars Delivered</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-n" data-target="68">0</span
+                ><span>Countries</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=700&q=80"
+              alt="About APEX"
+            />
+            <div class="about-img-accent"></div>
+          </div>
+        </div>
+        <div class="team-section">
+          <div class="section-header">
+            <div class="section-tag">THE TEAM</div>
+            <h2 class="section-title">
+              MEET THE <span class="accent-red">VISIONARIES</span>
+            </h2>
+          </div>
+          <div class="team-grid" id="teamGrid"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════ PAGE: CONTACT ═══════════════════════════ -->
+    <div class="page" id="page-contact">
+      <div class="page-hero-mini">
+        <div
+          class="phm-bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=80&quot;);
+          "
+        ></div>
+        <div class="phm-overlay"></div>
+        <div class="phm-content">
+          <div class="section-tag">REACH OUT</div>
+          <h1>CONTACT US</h1>
+        </div>
+      </div>
+      <section class="section contact-section">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2 class="section-title">
+              LET'S <span class="accent-red">TALK</span>
+            </h2>
+            <p>
+              Our specialists are ready to guide you to your perfect machine.
+              Reach out — we speak fluent horsepower.
+            </p>
+            <div class="contact-items">
+              <div class="ci">
+                <span class="ci-icon">📍</span>
+                <div>
+                  <strong>Showroom</strong>
+                  <p>1200 Speed Boulevard, Monaco</p>
+                </div>
+              </div>
+              <div class="ci">
+                <span class="ci-icon">📞</span>
+                <div>
+                  <strong>Phone</strong>
+                  <p>+1 (800) APEX-CAR</p>
+                </div>
+              </div>
+              <div class="ci">
+                <span class="ci-icon">✉</span>
+                <div>
+                  <strong>Email</strong>
+                  <p>legends@apexmotors.com</p>
+                </div>
+              </div>
+              <div class="ci">
+                <span class="ci-icon">🕐</span>
+                <div>
+                  <strong>Hours</strong>
+                  <p>Mon–Sat 9AM–8PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-wrap">
+            <form
+              class="glass-form"
+              id="contactForm"
+              onsubmit="return handleContactForm(event);"
+            >
+              <h3>Send a Message</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name</label
+                  ><input type="text" placeholder="John Doe" required />
+                </div>
+                <div class="form-group">
+                  <label>Email</label
+                  ><input
+                    type="email"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Subject</label
+                ><input
+                  type="text"
+                  placeholder="I'm interested in..."
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Message</label
+                ><textarea
+                  rows="5"
+                  placeholder="Tell us about your dream car..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-red full-width">
+                Send Message <span>→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════ PAGE: LOGIN ═══════════════════════════ -->
+    <div class="page" id="page-login">
+      <div class="auth-page">
+        <div
+          class="auth-bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1400&q=80&quot;);
+          "
+        ></div>
+        <div class="auth-overlay"></div>
+        <div class="auth-card glass-card">
+          <div class="auth-logo">
+            <span class="logo-a">A</span><span class="logo-rest">PEX</span>
+          </div>
+          <h2>Welcome Back</h2>
+          <p class="auth-sub">Sign in to your exclusive member portal</p>
+          <form
+            class="auth-form"
+            id="loginForm"
+            onsubmit="return handleLogin(event);"
+          >
+            <div class="form-group">
+              <label>Email Address</label>
+              <div class="input-wrap">
+                <span class="input-icon">✉</span
+                ><input
+                  type="email"
+                  id="loginEmail"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <div class="input-wrap">
+                <span class="input-icon">🔒</span
+                ><input
+                  type="password"
+                  id="loginPass"
+                  placeholder="••••••••"
+                  required
+                /><button
+                  type="button"
+                  class="toggle-pass"
+                  onclick="togglePassword('loginPass')"
+                >
+                  👁
+                </button>
+              </div>
+            </div>
+            <div class="form-row-between">
+              <label class="checkbox-label"
+                ><input type="checkbox" /><span>Remember Me</span></label
+              >
+              <a href="#" class="link-red">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn-red full-width">Sign In</button>
+            <div class="auth-divider"><span>or continue with</span></div>
+            <div class="social-auth">
+              <button type="button" class="social-auth-btn">
+                <span>G</span> Google
+              </button>
+              <button type="button" class="social-auth-btn">
+                <span>f</span> Facebook
+              </button>
+            </div>
+            <p class="auth-switch">
+              Don't have an account?
+              <a href="#" class="link-red" data-page="register">Register Now</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════ PAGE: REGISTER ═══════════════════════════ -->
+    <div class="page" id="page-register">
+      <div class="auth-page">
+        <div
+          class="auth-bg"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1400&q=80&quot;);
+          "
+        ></div>
+        <div class="auth-overlay"></div>
+        <div class="auth-card glass-card" style="max-width: 540px">
+          <div class="auth-logo">
+            <span class="logo-a">A</span><span class="logo-rest">PEX</span>
+          </div>
+          <h2>Join the Elite</h2>
+          <p class="auth-sub">Create your exclusive APEX member account</p>
+          <form
+            class="auth-form"
+            id="registerForm"
+            onsubmit="return handleRegister(event);"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    id="regName"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Username</label>
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    id="regUser"
+                    placeholder="@username"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <div class="input-wrap">
+                <input
+                  type="email"
+                  id="regEmail"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Password</label>
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    id="regPass"
+                    placeholder="Min 8 chars"
+                    required
+                    oninput="checkPass()"
+                  /><button
+                    type="button"
+                    class="toggle-pass"
+                    onclick="togglePassword('regPass')"
+                  >
+                    👁
+                  </button>
+                </div>
+                <div class="pass-strength" id="passStrength">
+                  <div class="ps-bar"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Confirm Password</label>
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    id="regConfirm"
+                    placeholder="Repeat password"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <label class="checkbox-label mt"
+              ><input type="checkbox" required /><span
+                >I agree to the
+                <a href="#" class="link-red">Terms & Conditions</a> and
+                <a href="#" class="link-red">Privacy Policy</a></span
+              ></label
+            >
+            <button type="submit" class="btn-red full-width">
+              Create Account
+            </button>
+            <p class="auth-switch">
+              Already a member?
+              <a href="#" class="link-red" data-page="login">Sign In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════ PAGE: DASHBOARD ═══════════════════════════ -->
+    <div class="page" id="page-dashboard">
+      <div class="dashboard-wrap">
+        <aside class="dash-sidebar">
+          <div class="dash-user">
+            <div class="dash-avatar">JD</div>
+            <div class="dash-user-info">
+              <strong id="dashName">John Doe</strong><span>Premium Member</span>
+            </div>
+          </div>
+          <nav class="dash-nav">
+            <a href="#" class="dash-nav-item active" data-dash="overview"
+              >📊 Overview</a
+            >
+            <a href="#" class="dash-nav-item" data-dash="favorites"
+              >❤️ Favorites</a
+            >
+            <a href="#" class="dash-nav-item" data-dash="viewed"
+              >👁 Recently Viewed</a
+            >
+            <a href="#" class="dash-nav-item" data-dash="settings"
+              >⚙️ Settings</a
+            >
+            <a href="#" class="dash-nav-item logout-btn" id="logoutBtn"
+              >🚪 Logout</a
+            >
+          </nav>
+        </aside>
+        <main class="dash-main" id="dashMain">
+          <!-- Filled by JS -->
+        </main>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════ TOAST ═══════════════════════════ -->
+    <div class="toast" id="toast"></div>
+
+    <script src="car.js"></script>
+  </body>
+</html>
